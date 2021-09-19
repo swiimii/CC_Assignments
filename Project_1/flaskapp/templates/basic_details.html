@@ -1,11 +1,13 @@
 <html>
     <body>
-        <form action="{{ url_for('submit_data') }}" method=POST>
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-            <input type="submit" value="Submit">
-          </form>
+        First name: {{fname}}
+        <br />
+        Last name: {{lname}}
+        <br />
+        Email: {{email}}
+        <br />
+        <a href="{{url_for('home')}}">
+            <button>Return to home</button>
+        </a>
     </body>
 </html>

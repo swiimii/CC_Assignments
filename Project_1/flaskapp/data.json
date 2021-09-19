@@ -1,0 +1,14 @@
+{
+    "username": {
+        "pw": "password",
+        "fname": "john",
+        "lname": "doe",
+        "email": "john@fakeemail.net"
+    },
+    "user": {
+        "pw": "pass",
+        "fname": "john",
+        "lname": "2",
+        "email": "netmail"
+    }
+}

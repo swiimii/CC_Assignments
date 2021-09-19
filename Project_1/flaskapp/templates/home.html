@@ -1,11 +1,43 @@
 <html>
     <body>
-        <form action="{{ url_for('submit_data') }}" method=POST>
+        Register:
+        <form action="{{ url_for('register') }}" method=POST>
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
             <label for="lname">Last name:</label>
             <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname"><br><br>
+            <label for="pw">Password:</label>
+            <input type="text" id="pw" name="pw"><br><br>
             <input type="submit" value="Submit">
-          </form>
+        </form>
+
+        {% block content %}
+        {% if register_success is defined and not register_success %}
+        <p style="color:red">
+            Registration failed! Ensure all your information has beeen populated, or try a different username!
+        </p>
+        {% endif %}        
+        <br />        
+
+        Login:
+        <form action="{{ url_for('login') }}" method=POST>
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname"><br><br>
+            <label for="pw">Password:</label>
+            <input type="text" id="pw" name="pw"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        
+        {% if login_success is defined and not login_success %}
+        <p style="color:red">
+            Login failed! Check your information or register at the top of this page!
+        </p>
+        {% endif %}
+        {%endblock content %}
+
     </body>
 </html>
